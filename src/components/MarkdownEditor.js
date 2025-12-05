@@ -3,26 +3,23 @@ import ReactMarkdown from "react-markdown";
 
 const MarkdownEditor = () => {
   const [text, setText] = useState("");
-  const [previewText, setPreviewText] = useState("");
+  const [preview, setPreview] = useState("");
 
   useEffect(() => {
-    setPreviewText(text);
+    setPreview(text);
   }, [text]);
 
   return (
-    <div className="editor-container">
-      
-      {/* Markdown Input Area */}
+    <div className="app">
       <textarea
         className="textarea"
         value={text}
         onChange={(e) => setText(e.target.value)}
-        placeholder="Write Markdown here..."
-      ></textarea>
+        placeholder="Enter markdown here..."
+      />
 
-      {/* Markdown Preview */}
       <div className="preview">
-        <ReactMarkdown>{previewText}</ReactMarkdown>
+        <ReactMarkdown>{preview}</ReactMarkdown>
       </div>
     </div>
   );
