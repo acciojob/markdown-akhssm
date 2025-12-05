@@ -1,13 +1,9 @@
 import React, { useState, useEffect } from "react";
 import ReactMarkdown from "react-markdown";
+import "../styles/App.css";
 
 const MarkdownEditor = () => {
   const [text, setText] = useState("");
-  const [preview, setPreview] = useState("");
-
-  useEffect(() => {
-    setPreview(text);
-  }, [text]);
 
   return (
     <div className="app">
@@ -19,7 +15,7 @@ const MarkdownEditor = () => {
       />
 
       <div className="preview">
-        <ReactMarkdown>{preview}</ReactMarkdown>
+        <ReactMarkdown>{text}</ReactMarkdown>
       </div>
     </div>
   );
